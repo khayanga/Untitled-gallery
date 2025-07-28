@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -29,10 +28,10 @@ const ArtWorks = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-        {artPieces.map((piece, index) => (
+        {artPieces.map((piece) => (
           <div
-            key={index}
-            className="bg-white border shadow-sm  overflow-hidden"
+            key={piece.id}
+            className="bg-white border shadow-sm overflow-hidden"
           >
             {/* Image Section with Gradient Background */}
             <div className="relative bg-gray-100 p-10">

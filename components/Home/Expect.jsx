@@ -1,25 +1,26 @@
-import { expectCards } from '@/data'
-import Image from 'next/image'
-import React from 'react'
+import { expectCards } from "@/data";
+import Image from "next/image";
+import React from "react";
 
 const Expect = () => {
   return (
-    <section className='mx-auto max-w-7xl px-6 py-16 sm:py-24'>
-      <h1 className='text-[48px] md:text-left text-center font-medium'>What to expect </h1>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 '>
+    <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+      <h1 className="text-[48px] md:text-left text-center font-medium">
+        What to expect{" "}
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 ">
         {expectCards.map((card, index) => (
           <div
             key={index}
-            className='relative h-[400px]  overflow-hidden group shadow-lg'
+            className="relative h-[400px]  overflow-hidden group shadow-lg"
           >
             {/* Background Image */}
             <Image
               src={card.image}
               alt={card.title}
-              layout='fill'
-              objectFit='cover'
-              objectPosition='center'
-              className='transition-transform duration-500 group-hover:scale-105'
+              fill
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              className="transition-transform duration-500 group-hover:scale-105"
             />
 
             {/* Overlay Content */}
@@ -33,7 +34,7 @@ const Expect = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Expect
+export default Expect;

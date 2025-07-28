@@ -6,8 +6,9 @@ import { LuMenu } from "react-icons/lu";
 import { LiaTimesSolid } from "react-icons/lia";
 import { ChevronDown } from "lucide-react";
 import { navLinks } from "@/data";
-import { Button } from "../ui/button";
+
 import { Search } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -18,10 +19,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="sticky top-0 z-50 px-6 lg:px-8 md:pt-4">
-      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+    <header className="sticky top-0 z-50 px-6 lg:px-8 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6 ">
         <Link href="/" className="flex items-center">
-          <h1 className="text-white font-serif  text-[24px] font-bold">
+          <h1 className="text-gray-800 font-serif  text-[24px] font-bold">
             Untitled Gallery
           </h1>
         </Link>
@@ -33,10 +34,10 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link.href}
-                  className={`relative font-medium text-white transition-colors
+                  className={`relative font-medium text-gray-800 transition-colors
                     ${
                       pathname === link.href
-                        ? "after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-full after:h-[2px] after:bg-white"
+                        ? "after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-full after:h-[2px] after:bg-gray-800"
                         : ""
                     }`}
                 >
@@ -49,13 +50,13 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-4">
           {/* Search Button with Icon */}
-          <Button className="bg-gray-300 text-gray-400 rounded-none hover:bg-gray-200 transition-colors flex items-center gap-2">
+          <Button className="bg-gray-100 text-gray-400 rounded-none hover:bg-gray-200 transition-colors flex items-center gap-2">
             <Search className="w-4 h-4" />
             <Link href="/signin">Search events by city</Link>
           </Button>
 
           {/* Sign Up/In Button */}
-          <Button className="bg-white text-black rounded-none hover:bg-gray-200 transition-colors">
+          <Button className="bg-gray-800 text-white rounded-none hover:bg-gray-700 transition-colors">
             <Link href="/signin">Sign Up or In</Link>
           </Button>
         </div>
@@ -68,9 +69,9 @@ const Navbar = () => {
             className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           >
             {isOpen ? (
-              <LiaTimesSolid className="w-5 h-5 text-white" />
+              <LiaTimesSolid className="w-5 h-5 text-gray-800" />
             ) : (
-              <LuMenu className="w-5 h-5 text-white" />
+              <LuMenu className="w-5 h-5 text-gray-800" />
             )}
           </button>
         </div>
@@ -81,7 +82,22 @@ const Navbar = () => {
         <div className="md:hidden container py-2 border-t bg-background/80 backdrop-blur">
           <nav className="px-4 ">
             <ul className="flex flex-col space-y-4 mb-2">
-              {navLinks.map((link, index) => (
+                 {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.href}
+                  className={`relative font-medium text-gray-800 transition-colors
+                    ${
+                      pathname === link.href
+                        ? "after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-full after:h-[2px] after:bg-gray-800"
+                        : ""
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+              {/* {navLinks.map((link, index) => (
                 <li key={index}>
                   {link.subItems ? (
                     <div>
@@ -126,7 +142,7 @@ const Navbar = () => {
                     </Link>
                   )}
                 </li>
-              ))}
+              ))} */}
             </ul>
 
             <Link

@@ -16,9 +16,8 @@ const Events = () => {
         <Image
           src="/footer2.png"
           alt="Event Image"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
 
         <div className="absolute top-4 right-4 z-10">

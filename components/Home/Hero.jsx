@@ -37,8 +37,10 @@ const Hero = () => {
                 alt={`${artist.name}'s artwork`}
                 width={400}
                 height={350}
-                className="object-cover w-full h-full"
+                style={{ objectFit: "cover" }}
+                className="w-full h-full"
               />
+
               <div className="absolute inset-0 bg-black/40 z-10" />
 
               {/* Bottom-left badge on image */}
@@ -90,12 +92,11 @@ const Hero = () => {
         ))}
       </div>
 
-     <div className="flex justify-center mt-4 md:mt-8">
+      <div className="flex justify-center mt-4 md:mt-8">
         <Button className="p-6 bg-neutral-900 text-white rounded-none hover:bg-gray-200 hover:text-gray-700 transition-colors">
-            <Link href="/signin">See all events</Link>
+          <Link href="/signin">See all events</Link>
         </Button>
-        </div>
-
+      </div>
     </section>
   );
 };

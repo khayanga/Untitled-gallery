@@ -4,10 +4,10 @@ import { ChevronDown } from "lucide-react";
 import { helpLinks, navLinks, otherLinks, socialLinks } from "@/data";
 import Link from "next/link";
 
-const Footer = () => {
+const div = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-neutral-900 text-white relative">
+    <div className="bg-neutral-900 text-white relative">
       <div className="py-12 md:py-16 mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8">
         {/* Brand */}
         <div className="md:w-[400px]">
@@ -98,8 +98,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default div;

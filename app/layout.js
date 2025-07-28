@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"; // Import Playfair_Display
 import "./globals.css";
+import Navbar from "@/components/Home/Navbar";
+import Footer from "@/components/Home/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,11 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Configure Playfair Display
+
 const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display", // Define a CSS variable for Playfair Display
+  variable: "--font-playfair-display", 
   subsets: ["latin"],
-  display: "swap", // Optional: Control font loading behavior
+  display: "swap", 
 });
 
 export const metadata = {
@@ -26,11 +28,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* <Navbar />/ */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`} // Add Playfair Display variable to body
+        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`} 
       >
         {children}
       </body>
+      <Footer/>
     </html>
   );
 }
