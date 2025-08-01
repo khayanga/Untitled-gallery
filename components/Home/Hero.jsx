@@ -30,7 +30,7 @@ const Hero = () => {
             key={artist.id}
             className="relative overflow-hidden bg-white w-full max-w-sm mx-auto my-4"
           >
-            {/* Image Section with Overlay and Bottom-Left Badge */}
+            
             <div className="relative w-full h-[350px]">
               <Image
                 src={artist.artwork}
@@ -43,7 +43,7 @@ const Hero = () => {
 
               <div className="absolute inset-0 bg-black/40 z-10" />
 
-              {/* Bottom-left badge on image */}
+              
               <div className="absolute bottom-4 left-4 z-20">
                 <div className="text-blue-500 p-2 rounded-sm flex items-center gap-1 bg-white w-fit font-light shadow">
                   <BookImage className="w-4 h-4" />
@@ -52,7 +52,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Date Badge */}
+            
             <div className="absolute top-4 right-2 z-20">
               <div className="text-gray-800 p-1 bg-white flex flex-col items-center justify-center font-medium w-[90px] text-center rounded leading-tight">
                 <p>WED, JUN</p>

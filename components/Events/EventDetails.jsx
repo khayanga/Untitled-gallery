@@ -67,6 +67,24 @@ const EventDetails = ({ event }) => {
                 className=" object-cover w-full md:w-1/2"
               />
             </div>
+
+            {/* Restricted to directors only  */}
+
+            <div className="bg-amber-100/50 border border-amber-300 flex justify-between items-center p-4 mt-4">
+              <div className="flex items-center text-sm text-amber-800">
+                <Ticket className="w-5 h-5  inline-block mr-2" />
+                <span>You have manage access for thie event</span>
+              </div>
+
+              <Link
+               href={`/dashboard/directors/events/${event.id}`}
+                className="text-gray-700 underline block text-center"
+              >
+                <Button className=" rounded-none bg-neutral-900 text-white  hover:bg-gray-800 transition-colors">
+                  Manage Event
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Ticket Details */}

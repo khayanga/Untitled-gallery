@@ -1,4 +1,5 @@
 import { BookImage, Palette, Wine } from "lucide-react";
+import { Eye, Share2, Pencil, Trash, XCircle } from "lucide-react";
 
 export const navLinks = [
   { name: 'Home', href: '/' },
@@ -32,6 +33,33 @@ export const socialLinks = [
   
 ];
 
+export const popoverActions = [
+  {
+    label: "View",
+    icon: Eye,
+    className: "text-gray-600 hover:text-gray-800",
+  },
+  {
+    label: "Share",
+    icon: Share2,
+    className: "text-gray-600 hover:text-gray-800",
+  },
+  {
+    label: "Edit",
+    icon: Pencil,
+    className: "text-gray-600 hover:text-gray-800",
+  },
+  {
+    label: "Unpublish",
+    icon: Trash,
+    className: "text-gray-600 hover:text-gray-800",
+  },
+  {
+    label: "Cancel Event",
+    icon: XCircle,
+    className: "text-red-600 hover:text-red-800",
+  },
+];
 export const expectCards =[
   {
     title:"Initimate shows",
@@ -225,12 +253,117 @@ export const heroArtists = [
 ];
 
 
+export const curatorEvents=[
+  {
+    id: 1,
+    title: "The Collector’s Preview",
+    artist: "James Choi",
+    location: "Los Angeles, USA",
+    image: "/event1.png",
+    date: "Wed, Jul 24",
+    badge: "Gallery opening",
+    icon: BookImage,
+    tags: ["ContemporaryArt", "Neo-expressionism"],
+    
+  },
+  {
+    id: 2,
+    title: "The Collector’s Preview",
+    artist: "John Doe",
+    location: "Atlanta",
+    image: "/event2.png",
+    date: "Tue, Aug 24",
+    badge: "Painting",
+    icon:Palette,
+    tags: ["ContemporaryArt", "Neo-expressionism"],
+    
+  },
+  {
+    id: 3,
+    title: "The Collector’s Preview",
+    artist: "Jane Smith",
+    location: "New York",
+    image: "/event1.png",
+    date: "Mon, Sep 24",
+    badge: "Dinner Experience",
+    icon: Wine,
+    tags: ["ContemporaryArt", "Neo-expressionism"],
+    
+  },
+]
+
+
+export const personalInfoFields = [
+  { id: 'firstName', label: 'First Name', type: 'text', defaultValue: 'Michael' },
+  { id: 'lastName', label: 'Last Name', type: 'text', defaultValue: 'Mensah' },
+  { id: 'email', label: 'Email', type: 'email', defaultValue: 'mensahmichael@gmail.com' },
+  { id: 'phoneNumber', label: 'Phone number', type: 'text', defaultValue: '233' },
+];
+
+export const locationFields = [
+  {
+    id: 'country',
+    label: 'Country',
+    type: 'select',
+    defaultValue: 'Ghana',
+    options: ['Ghana', 'USA', 'Canada'],
+  },
+  {
+    id: 'city',
+    label: 'City',
+    type: 'select',
+    defaultValue: 'Accra',
+    options: ['Accra', 'Kumasi', 'Takoradi'],
+  },
+  {
+    id: 'streetAddress',
+    label: 'Street address',
+    type: 'text',
+    defaultValue: 'Kasoa akweley roundabout',
+  },
+  {
+    id: 'apartment',
+    label: 'Apartment (optional)',
+    type: 'text',
+    placeholder: 'Add apartment',
+  },
+  {
+    id: 'postalCode',
+    label: 'Postal Code',
+    type: 'text',
+    defaultValue: '233',
+  },
+];
+
+export const passwordFields = [
+  {
+    id: 'currentPassword',
+    label: 'Current Password',
+    type: 'password',
+    placeholder: 'Enter current password',
+  },
+  {
+    id: 'newPassword',
+    label: 'New Password',
+    type: 'password',
+    placeholder: 'Enter new password',
+  },
+  {
+    id: 'confirmNewPassword',
+    label: 'Confirm New Password',
+    type: 'password',
+    placeholder: 'Confirm new password',
+  },
+];
+
+
 
 
 export const eventList = [
   {
     id: 1,
     name: "Belin",
+    title: "The Collector’s Preview",
     location: "Linares, Spain",
     art1: "/art1.png",
     art2:'/art2.png',
@@ -253,6 +386,7 @@ export const eventList = [
     id: 2,
     name: "Ines Jimm",
     location: "Madrid, Spain",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art2.png",
@@ -274,6 +408,7 @@ export const eventList = [
     id: 3,
     name: "Tania Marmolejo",
     location: "Paris, France",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art1.png",
@@ -295,6 +430,7 @@ export const eventList = [
     id: 4,
     name: "Albion",
     location: "New York City, USA",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art2.png",
@@ -316,6 +452,7 @@ export const eventList = [
     id: 5,
     name: "Luna Noir",
     location: "Berlin, Germany",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art1.png",
@@ -337,6 +474,7 @@ export const eventList = [
     id: 6,
     name: "Javier Cortés",
     location: "Barcelona, Spain",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art2.png",
@@ -358,6 +496,7 @@ export const eventList = [
     id: 7,
     name: "Mira Laveau",
     location: "Cape Town, South Africa",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art1.png",
@@ -379,6 +518,7 @@ export const eventList = [
     id: 8,
     name: "Riko Yamato",
     location: "Tokyo, Japan",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art2.png",
@@ -400,6 +540,7 @@ export const eventList = [
     id: 9,
     name: "Amahle Ndlovu",
     location: "Johannesburg, South Africa",
+    title: "The Collector’s Preview",
     art1: "/art1.png",
     art2:'/art2.png',
     artwork: "/art1.png",
@@ -436,4 +577,42 @@ export const eventGallery =[
   },
   
 ]
+
+export const guestList = [
+  { name: "James Appiah Koranteng", status: "Attending" },
+  { name: "Judith Ago Mensah", status: "Attending" },
+  { name: "Chris Waddle Wande Coal", status: "Attending" },
+  { name: "Michael Mensah Kwame", status: "Attending" },
+  { name: "James Babone", status: "Cancelled" },
+  { name: "James Babone", status: "Cancelled" },
+  { name: "James Babone", status: "Cancelled" },
+  { name: "James Babone", status: "Cancelled" },
+];
+
+
+
+export const rsvpData = [
+  { name: "Tue", value: 20 },
+  { name: "Wed", value: 25 },
+  { name: "Thu", value: 40 },
+  { name: "Fri", value: 65 },
+  { name: "Sat", value: 90 },
+];
+
+export const pageViewsData = [
+  { name: "Tue", value: 10 },
+  { name: "Wed", value: 15 },
+  { name: "Thu", value: 30 },
+  { name: "Fri", value: 55 },
+  { name: "Sat", value: 80 },
+];
+
+export const cityData = [
+  { name: "Greater Accra", value: 18 },
+  { name: "Central", value: 4 },
+  { name: "Volta", value: 6 },
+  { name: "Ashanti", value: 7 },
+  { name: "Eastern", value: 2 },
+];
+
 
