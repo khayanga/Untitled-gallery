@@ -1,11 +1,12 @@
 "use client";
 import { cityData, pageViewsData, rsvpData } from "@/data";
 import React from "react";
-
+import { Cell, Label, Pie, PieChart } from "recharts";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import {
   Card,
   CardContent,
+  CardFooter,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -39,7 +40,36 @@ const pageViewsConfig = {
   },
 };
 
+const cityDataConfig = {
+  value: {
+    label: "Value",
+  },
+  "Greater Accra": {
+    label: "Greater Accra",
+    color: "var(--chart-1)",
+  },
+  Central: {
+    label: "Central",
+    color: "var(--chart-2)",
+  },
+  Volta: {
+    label: "Volta",
+    color: "var(--chart-3)",
+  },
+  Ashanti: {
+    label: "Ashanti",
+    color: "var(--chart-4)",
+  },
+  Eastern: {
+    label: "Eastern",
+    color: "var(--chart-5)",
+  },
+};
+
 const DashboardCharts = () => {
+  const totalValue = React.useMemo(() => {
+    return cityData.reduce((acc, curr) => acc + curr.value, 0);
+  }, []);
   return (
     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Total RSVPs */}
@@ -150,6 +180,92 @@ const DashboardCharts = () => {
               </AreaChart>
             </ChartContainer>
           </CardContent>
+        </Card>
+      </div>
+
+      <div className="border p-4 bg-white">
+        <h2 className="text-sm text-gray-500 mb-2">Top Cities</h2>
+        <Card className="flex flex-col pt-0 rounded-none shadow-none border-none">
+          <CardContent className="flex-1 pb-0">
+            <ChartContainer
+              config={cityDataConfig}
+              className="mx-auto aspect-square max-h-[250px]"
+            >
+              <PieChart>
+                <ChartTooltip
+                  cursor={false}
+                  content={<ChartTooltipContent hideLabel />}
+                />
+                <Pie
+                  data={cityData}
+                  dataKey="value"
+                  nameKey="name"
+                  innerRadius={60}
+                  strokeWidth={5}
+                >
+                  {cityData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={cityDataConfig[entry.name].color}
+                    />
+                  ))}
+                  <Label
+                    content={({ viewBox }) => {
+                      if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                        return (
+                          <text
+                            x={viewBox.cx}
+                            y={viewBox.cy}
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                          >
+                            <tspan
+                              x={viewBox.cx}
+                              y={(viewBox.cy || 0) + 24}
+                              className="fill-muted-foreground"
+                            >
+                             All Attendess
+                            </tspan>
+                            <tspan
+                              x={viewBox.cx}
+                              y={viewBox.cy}
+                              className="fill-foreground text-3xl font-bold"
+                            >
+                              {totalValue.toLocaleString()}
+                            </tspan>
+                            
+                          </text>
+                        );
+                      }
+                    }}
+                  />
+                </Pie>
+              </PieChart>
+            </ChartContainer>
+          </CardContent>
+          <CardFooter className="flex-col gap-2 text-sm ">
+            <div className="p-4 pt-4 bg-gray-100 rounded-sm">
+              <div className="grid grid-cols-2 gap-4">
+                {cityData.map((city, index) => {
+                  const percentage = (city.value / totalValue) * 100;
+                  return (
+                    <div key={index} className="flex items-center gap-2">
+                      <div
+                        className="h-3 w-3 rounded-full"
+                        style={{
+                          backgroundColor: cityDataConfig[city.name].color,
+                        }}
+                      ></div>
+                      <span className="text-sm font-medium">{city.name}</span>
+                      <span className="ml-auto text-sm text-gray-500">
+                        {city.value} ({percentage.toFixed(0)}%)
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </CardFooter>
         </Card>
       </div>
     </div>

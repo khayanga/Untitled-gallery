@@ -609,10 +609,10 @@ export const pageViewsData = [
 
 export const cityData = [
   { name: "Greater Accra", value: 18 },
-  { name: "Central", value: 4 },
-  { name: "Volta", value: 6 },
-  { name: "Ashanti", value: 7 },
-  { name: "Eastern", value: 2 },
+  { name: "Central", value: 41 },
+  { name: "Volta", value: 60 },
+  { name: "Ashanti", value: 73 },
+  { name: "Eastern", value: 22 },
 ];
 
 

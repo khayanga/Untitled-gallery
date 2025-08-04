@@ -8,11 +8,16 @@ import { ChevronDown } from "lucide-react";
 import { navLinks } from "@/data";
 import { Button } from "../ui/button";
 import { Search } from "lucide-react";
+import Advisor from "../modals/Advisors/Advisor";
+import Creator from "../modals/Creators/Creator";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+  const [openAdvisor, setOpenAdvisor] = useState(false)
+  const [openCreator, setOpenCreator] = useState(false)
+   
   
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -55,8 +60,15 @@ const Navbar = () => {
           </Button>
 
           {/* Sign Up/In Button */}
-          <Button className="bg-white text-black rounded-none hover:bg-gray-200 transition-colors">
-            <Link href="/signin">Sign Up or In</Link>
+          <Button 
+          onClick={() => setOpenAdvisor(true)}
+          className="bg-white text-black rounded-none hover:bg-gray-200 transition-colors">
+            Sign Up or In
+          </Button>
+           <Button 
+          onClick={() => setOpenCreator(true)}
+          className="bg-white text-black rounded-none hover:bg-gray-200 transition-colors">
+            Sign Up or In
           </Button>
         </div>
 
@@ -139,7 +151,11 @@ const Navbar = () => {
           </nav>
         </div>
       )}
+
+      <Advisor open={openAdvisor} setOpen={setOpenAdvisor} />
+      <Creator open={openCreator} setOpen={setOpenCreator}/>
     </header>
+    
   );
 };
 

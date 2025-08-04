@@ -8,11 +8,15 @@ import Expect from "@/components/Home/Expect";
 import Hero from "@/components/Home/Hero";
 import Images from "@/components/Home/Images";
 import Partners from "@/components/Home/Partners";
+import Advisor from "@/components/modals/Advisors/Advisor";
 import { AnimatedSection } from "@/components/ui/animated-section";
+import { useState } from "react";
 
 export default function Home() {
+   
   return (
     <div>
+      
       <AnimatedSection>
         <Banner />
       </AnimatedSection>
@@ -40,6 +44,8 @@ export default function Home() {
       <AnimatedSection>
         <Images />
       </AnimatedSection>
+
+      
     </div>
   );
 }
