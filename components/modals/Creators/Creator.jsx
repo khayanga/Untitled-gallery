@@ -7,6 +7,7 @@ import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import StepFive from "./StepFive";
 import StepSix from "./StepSix";
+import Onboarding from "../Oboarding";
 
 const Creator = ({ open, setOpen }) => {
   const [step, setStep] = useState(1);
@@ -32,14 +33,23 @@ const Creator = ({ open, setOpen }) => {
         </div>
         <div className="md:w-1/2 p-12 flex flex-col justify-center ">
         <DialogTitle/>
-        {step === 1 && (
+        {
+          step === 1 &&(
+            <Onboarding
+            formData={formData}
+            updateField={updateField}
+            onNext={handleNext}
+            />
+          )
+        }
+        {step === 2 && (
             <StepOne
               formData={formData}
               updateField={updateField}
               onNext={handleNext}
             />
           )}
-          {step === 2 && (
+          {step === 3 && (
             <StepTwo
               formData={formData}
               updateField={updateField}
@@ -47,7 +57,7 @@ const Creator = ({ open, setOpen }) => {
               onBack={handleBack}
             />
           )}
-          {step === 3 && (
+          {step === 4 && (
             <StepThree
               formData={formData}
               updateField={updateField}
@@ -55,7 +65,7 @@ const Creator = ({ open, setOpen }) => {
               onBack={handleBack}
             />
           )}
-          {step === 4 && (
+          {step === 5 && (
             <StepFour
               formData={formData}
               updateField={updateField}
@@ -65,7 +75,7 @@ const Creator = ({ open, setOpen }) => {
           )}
 
           {
-            step === 5 && (
+            step === 6 && (
                 <StepFive
                 formData={formData}
                 updateField={updateField}
@@ -76,7 +86,7 @@ const Creator = ({ open, setOpen }) => {
           }
 
           {
-            step === 6 && (
+            step === 7 && (
                 <StepSix
                 formData={formData}
                 updateField={updateField}

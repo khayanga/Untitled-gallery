@@ -96,10 +96,11 @@ const ArtDetails = ({ art }) => {
               <h3>Draw closing on</h3>
               <p className="text-gray-600 text-sm">{art.drawTime}</p>
 
-              <Button className="w-full mt-6 rounded-none bg-neutral-900 text-white  hover:bg-gray-800 transition-colors">
-                Enter Draw
-              </Button>
-
+              <Link href={`/checkout/${art.id}`} >
+                <Button className="w-full mt-6 rounded-none bg-neutral-900 text-white hover:bg-gray-800 transition-colors">
+                  Buy Artwork
+                </Button>
+              </Link>
               <Link
                 href="/share"
                 className="text-gray-600 text-sm  underline mt-4 inline-block"

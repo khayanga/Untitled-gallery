@@ -22,7 +22,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { artPieces, eventList } from "@/data";
+import { artPieces } from "@/data";
 
 const List = () => {
   const [open, setOpen] = useState(false);
@@ -133,9 +133,9 @@ const List = () => {
               </span>
             </div>
 
-            {/* Text Content */}
+            
             <div className="p-4 bg-white">
-              {/* Title + Price Row */}
+              
               <div className="flex items-start justify-between">
                 <div>
                   <h3 className="text-sm font-medium">{piece.title}</h3>
@@ -144,7 +144,7 @@ const List = () => {
                   </p>
                 </div>
                 <p className="text-md font-semibold whitespace-nowrap">
-                  {piece.price}
+                  ${piece.price.toFixed(2)}
                 </p>
               </div>
             </div>

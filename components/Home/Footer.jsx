@@ -8,14 +8,14 @@ const div = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="bg-neutral-900 text-white relative">
-      <div className="py-12 md:py-16 mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8">
+      <div className="py-12 md:py-16 mx-auto max-w-7xl px-2  flex flex-col-reverse  lg:flex-row justify-between items-center text-center gap-8">
         {/* Brand */}
         <div className="md:w-[400px]">
           <h1 className="text-[40px] sm:text-[60px] md:text-[80px] font-medium">Untited Gallery</h1>
         </div>
 
         {/* Links Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:flex gap-8 md:gap-16 w-full md:w-auto justify-center">
+        <div className="grid  grid-cols-1 md:grid-cols-2  md:flex gap-8 md:gap-16 w-full md:w-auto justify-center">
           {/* Nav Column */}
           <div>
             <h1 className="text-white font-bold mb-3">Company Links</h1>
